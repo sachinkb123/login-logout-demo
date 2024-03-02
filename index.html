@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="loginform" onsubmit="storeCredentials(event)">
+        <h2>Login page</h2>
+        <label for="firstname">Firstname:</label>
+        <input
+          type="firstname"
+          id="firstname"
+          placeholder="Enter your FirstName"
+          required
+        />
+        <label for="lastname">Lastname:</label>
+        <input
+          type="lastname"
+          id="lastname"
+          placeholder="Enter your Lastname"
+          required
+        />
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your Email"
+          required
+        />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <script src="javaScript.js"></script>
+  </body>
+</html>
