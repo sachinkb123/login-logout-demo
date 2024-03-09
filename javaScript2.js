@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (logoutBtn) {
     logoutBtn.addEventListener("click", function () {
       localStorage.clear();
-      alert("Do you Logout");
+      alert("Do you want Logout");
       window.location.href = "index.html";
     });
   }
