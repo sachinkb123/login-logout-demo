@@ -10,25 +10,18 @@
     <div class="container">
       <form id="loginform" onsubmit="storeCredentials(event)">
         <h2>Login page</h2>
-        <label for="firstname">Firstname:</label>
+        <label for="name">Name:</label>
         <input
-          type="firstname"
-          id="firstname"
-          placeholder="Enter your FirstName"
+          type="text"
+          id="name"
+          placeholder="Enter your name"
           required
         />
-        <label for="lastname">Lastname:</label>
+        <label for="username">Username:</label>
         <input
-          type="lastname"
-          id="lastname"
-          placeholder="Enter your Lastname"
-          required
-        />
-        <label for="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Enter your Email"
+          type="text"
+          id="username"
+          placeholder="Enter your username"
           required
         />
         <label for="password">Password:</label>
@@ -39,6 +32,7 @@
           required
         />
         <button type="submit">Login</button>
+        <span id="error"></span>
       </form>
     </div>
 

@@ -1,28 +1,38 @@
 "use strict";
 
-let loggedIn = localStorage.getItem("loggedIn");
-
-if (loggedIn) {
-  window.location.href = "welcome.html";
-}
-
 function storeCredentials(event) {
   event.preventDefault();
 
-  // Retrieve input values
-  let firstName = document.getElementById("firstname").value;
-  let lastName = document.getElementById("lastname").value;
-  let email = document.getElementById("email").value;
+  let Name = document.getElementById("name").value;
+  let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
+  
+  localStorage.setItem("username", username);
+  
+  const validPassword = "test123";
 
-  // Store values in localStorage
-  localStorage.setItem("firstname", firstName);
-  localStorage.setItem("lastname", lastName);
-  localStorage.setItem("email", email);
-  localStorage.setItem("password", password);
+  if (username === Name && password === validPassword) {
+    localStorage.setItem("loggedIn", true);
+    window.location.href = 'welcome.html';
+  } else {
+    document.getElementById('error').innerHTML = 'Incorrect username or password.';
+  }
+}
 
-  localStorage.setItem("loggedIn", true);
+if(window.location.pathname.includes("welcome.html")){
 
-  // Redirect to welcome page
-  window.location.href = "welcome.html";
+let username = localStorage.getItem("username");
+
+document.write("<h2>Welcome " + username + "!!</h2>");
+
+document.addEventListener("DOMContentLoaded", function () {
+  const logoutBtn = document.getElementById("logoutBtn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+      localStorage.clear();
+      alert("Do you want Logout");
+      window.location.href = "index.html";
+    });
+  }
+});
 }
