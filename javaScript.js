@@ -29,10 +29,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const logoutBtn = document.getElementById("logoutBtn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", function () {
-      localStorage.clear();
+      localStorage.removeItem('username');
+      localStorage.removeItem('loggedIn')
       alert("Do you want Logout");
       window.location.href = "index.html";
     });
   }
 });
 }
+
+checksLoggedIn();
+
+function checksLoggedIn(){
+  if(!localStorage.getItem('loggedIn')){
+    window.location.href='index.html';
+  }
+}
+
+
